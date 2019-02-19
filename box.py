@@ -21,13 +21,19 @@ class Box:
     def width_side_area(self):
         return self.width * self.height
 
-    def increase_width(self,num):
+    def increase_width(self):
+        print("How much do you want to increase the width by?")
+        num = float(input())
         self.width += num
 
-    def increase_height(self,num):
+    def increase_height(self):
+        print("How much do you want to increase the height by?")
+        num = float(input())
         self.height += num
 
-    def increase_length(self,num):
+    def increase_length(self):
+        print("How much do you want to increase the length by?")
+        num = float(input())
         self.length += num
 
 
@@ -47,23 +53,15 @@ def new_box():
     length = input()
     return Box(length,width,height)
 
-def increase_height():
-    print("How much do you want to increase the height by?")
-    num = float(input())
-    my_box.increase_height(num)
-
 def increase_length():
-    print("How much do you want to increase the length by?")
-    num = float(input())
+
     my_box.increase_length(num)
 
 def increase_width():
-    print("How much do you want to increase the width by?")
-    num = float(input())
+
     my_box.increase_width(num)
 
 my_box = new_box()
 info_box()
-
-
+my_box.increase_height()
 info_box()
