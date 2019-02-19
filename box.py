@@ -38,14 +38,16 @@ def info_box():
     print("The lengthwise face has an area of {} squared metres.".format(my_box.length_side_area()))
     print("The widthwise face has an area of {} squared metres.".format(my_box.width_side_area()))
 
-print("What is the height of the box in metres?")
-height = input()
-print("What is the width of the box in metres?")
-width = input()
-print("What is the length of the box in metres?")
-length = input()
+def new_box():
+    print("What is the height of the box in metres?")
+    height = input()
+    print("What is the width of the box in metres?")
+    width = input()
+    print("What is the length of the box in metres?")
+    length = input()
+    return Box(length,width,height)
 
-my_box = Box(length,width,height)
+my_box = new_box()
 info_box()
 
 print("How much do you want to increase the height by?")
