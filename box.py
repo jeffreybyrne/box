@@ -18,6 +18,9 @@ class Box:
     def length_side_area(self):
         return self.length * self.height
 
+    def width_side_area(self):
+        return self.width * self.height
+
 print("What is the height of the box in metres?")
 height = input()
 print("What is the width of the box in metres?")
@@ -29,4 +32,5 @@ my_box = Box(length,width,height)
 print(my_box)
 print("The box has a volume of {} cubic metres.".format(my_box.volume()))
 print("The box has a base area of {} squared metres.".format(my_box.base_area()))
-print("The box has a length-wise area of {} squared metres.".format(my_box.length_side_area()))
+print("The lengthwise face has an area of {} squared metres.".format(my_box.length_side_area()))
+print("The widthwise face has an area of {} squared metres.".format(my_box.width_side_area()))
