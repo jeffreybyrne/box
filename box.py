@@ -36,6 +36,29 @@ class Box:
         num = float(input())
         self.length += num
 
+    def decrease_width(self):
+        print("How much do you want to decrease the width by?")
+        num = float(input())
+        while num >= self.width:
+            print("Width cannot be decreased by {} metres, please try again.".format(num))
+            num = float(input())
+        self.width -= num
+
+    def decrease_height(self):
+        print("How much do you want to decrease the height by?")
+        num = float(input())
+        while num >= self.height:
+            print("Height cannot be decreased by {} metres, please try again.".format(num))
+            num = float(input())
+        self.height -= num
+
+    def decrease_length(self):
+        print("How much do you want to decrease the length by?")
+        num = float(input())
+        while num >= self.length:
+            print("Length cannot be decreased by {} metres, please try again.".format(num))
+            num = float(input())
+        self.length -= num
 
 def info_box():
     print(my_box)
@@ -53,15 +76,29 @@ def new_box():
     length = input()
     return Box(length,width,height)
 
-def increase_length():
-
-    my_box.increase_length(num)
-
-def increase_width():
-
-    my_box.increase_width(num)
-
 my_box = new_box()
+running = True
+
+while running:
+    print("What would you like to do? Options are as follows: \n1. Get information about the box.\n2. Increase the height of the box.\n3. Increase the width of the box.\n4. Increase the length of the box.\n5. Decrease the height of the box.\n6. Decrease the width of the box.\n7. Decrease the length of the box.")
+    resp = int(input())
+    if resp == 1:
+        info_box()
+    elif resp == 2:
+        my_box.increase_height()
+    elif resp == 3:
+        my_box.increase_width()
+    elif resp == 4:
+        my_box.increase_length()
+    elif resp == 5:
+        my_box.decrease_height()
+    elif resp == 6:
+        my_box.decrease_width()
+    elif resp == 7:
+        my_box.decrease_length()
+
+
 info_box()
 my_box.increase_height()
 info_box()
+my_box.decrease_width()
