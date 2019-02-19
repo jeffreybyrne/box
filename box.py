@@ -12,6 +12,9 @@ class Box:
     def volume(self):
         return self.width * self.height * self.length
 
+    def base_area(self):
+        return self.width * self.length
+
 print("What is the height of the box in metres?")
 height = input()
 print("What is the width of the box in metres?")
@@ -21,4 +24,5 @@ length = input()
 
 my_box = Box(length,width,height)
 print(my_box)
-print(my_box.volume())
+print("The box has a volume of {} cubic metres.".format(my_box.volume()))
+print("The box has a base area of {} squared metres.".format(my_box.base_area()))
