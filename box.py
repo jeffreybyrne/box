@@ -24,6 +24,51 @@ class Box:
         Box.list_of_boxes.append(new_box)
         return new_box
 
+    def main_menu(self):
+        while True:
+            self.print_menu()
+            selection = int(input())
+            self.do_action(selection)
+
+    def print_menu(self):
+        print('')
+        print('What would you like to do? Options are as follows:')
+        print('1. Get information about the box.')
+        print('2. Increase the height of the box.')
+        print('3. Increase the width of the box.')
+        print('4. Increase the length of the box.')
+        print('5. Decrease the height of the box.')
+        print('6. Decrease the width of the box.')
+        print('7. Decrease the length of the box.')
+        print('8. Quit.')
+
+    def do_action(self, resp):
+        if resp == 1:
+            my_box.box_info()
+        elif resp == 2:
+            my_box.increase_dimension('height')
+            # my_box.increase_height()
+        elif resp == 3:
+            my_box.increase_dimension('width')
+            # my_box.increase_width()
+        elif resp == 4:
+            my_box.increase_dimension('length')
+            # my_box.increase_length()
+        elif resp == 5:
+            my_box.decrease_dimension('height')
+            # my_box.decrease_height()
+        elif resp == 6:
+            my_box.decrease_dimension('width')
+            # my_box.decrease_width()
+        elif resp == 7:
+            my_box.decrease_dimension('length')
+            # my_box.decrease_length()
+        elif resp == 8:
+            print("Thank you for using our box script today!")
+            quit()
+        else:
+            pass
+
     # Function to determine the volume of the box
     def volume(self):
         return self.width * self.height * self.length
@@ -89,32 +134,4 @@ class Box:
 print("Welcome to the box script I made to practice making classes in Python!")
 # Call the function defined above and create a new box
 my_box = Box.create()
-
-while True:
-    print("What would you like to do? Options are as follows: \n1. Get information about the box.\n2. Increase the height of the box.\n3. Increase the width of the box.\n4. Increase the length of the box.\n5. Decrease the height of the box.\n6. Decrease the width of the box.\n7. Decrease the length of the box.\n8. Quit.")
-    resp = int(input())
-    if resp == 1:
-        my_box.box_info()
-    elif resp == 2:
-        my_box.increase_dimension('height')
-        # my_box.increase_height()
-    elif resp == 3:
-        my_box.increase_dimension('width')
-        # my_box.increase_width()
-    elif resp == 4:
-        my_box.increase_dimension('length')
-        # my_box.increase_length()
-    elif resp == 5:
-        my_box.decrease_dimension('height')
-        # my_box.decrease_height()
-    elif resp == 6:
-        my_box.decrease_dimension('width')
-        # my_box.decrease_width()
-    elif resp == 7:
-        my_box.decrease_dimension('length')
-        # my_box.decrease_length()
-    elif resp == 8:
-        print("Thank you for using our box script today!")
-        quit()
-    else:
-        pass
+my_box.main_menu()
